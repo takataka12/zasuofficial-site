@@ -1,82 +1,219 @@
 <!doctype html>
 <html lang="ja">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>ZASU OFFICIAL</title>
-<meta name="description" content="ZASU TOKYO HARDCORE official site. Music, apps, ZASU MASTER, M3 and shout lessons.">
-<style>
-:root{--bg:#060606;--panel:#0d0d0f;--line:#2a2a2f;--red:#ff2020;--fg:#f7f7f7;--muted:#a9a9b0}
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--fg);font-family:-apple-system,BlinkMacSystemFont,"Helvetica Neue","Hiragino Sans","Yu Gothic",sans-serif}
-a{color:inherit}.wrap{width:min(1060px,calc(100% - 34px));margin:auto}
-.hero{min-height:86vh;display:flex;align-items:center;position:relative;overflow:hidden;border-bottom:1px solid var(--line)}
-.hero:before{content:"";position:absolute;inset:-8%;background:url("images/zasu-logo.svg") center/78% no-repeat;opacity:.11;filter:grayscale(1) brightness(2)}
-.hero:after{content:"";position:absolute;inset:0;background:radial-gradient(circle at 75% 25%,rgba(255,20,20,.18),transparent 28%),linear-gradient(180deg,transparent 55%,#060606)}
-.hero .wrap{position:relative;z-index:1;padding:80px 0}
-.kicker{letter-spacing:.38em;color:var(--red);font-weight:900;font-size:13px}
-.logo{display:block;width:min(760px,95%);margin:24px 0 18px;filter:brightness(0) invert(1)}
-.tag{font-size:clamp(18px,3vw,34px);font-weight:900;letter-spacing:.12em}
-.sub{max-width:670px;color:var(--muted);font-size:16px;line-height:1.9;margin:18px 0 30px}
-.actions{display:flex;flex-wrap:wrap;gap:10px}.btn{display:inline-flex;align-items:center;justify-content:center;min-height:50px;padding:0 18px;border:1px solid #3b3b42;text-decoration:none;font-weight:900;letter-spacing:.06em;background:#111}
-.btn.primary{background:var(--red);border-color:var(--red);color:#fff}.btn:hover{transform:translateY(-1px)}
-section{padding:78px 0;border-bottom:1px solid var(--line)}h2{margin:0 0 14px;font-size:clamp(34px,6vw,64px);line-height:1;letter-spacing:-.04em}.lead{color:var(--muted);line-height:1.8;margin:0 0 30px}
-.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}.card{background:var(--panel);border:1px solid var(--line);padding:24px;text-decoration:none;display:block;min-height:150px}
-.card:hover{border-color:#555}.card .eyebrow{color:var(--red);font-size:12px;font-weight:900;letter-spacing:.2em}.card h3{font-size:25px;margin:10px 0 8px}.card p{color:var(--muted);line-height:1.7;margin:0}
-.m3{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.25fr);gap:28px;align-items:center}.m3 img{width:100%;border:1px solid #3a3a3a;background:#111}.price{font-size:clamp(70px,12vw,132px);font-weight:1000;line-height:.85;margin:20px 0}.red{color:var(--red)}
-.links{display:flex;flex-wrap:wrap;gap:10px}.links a{padding:12px 16px;border:1px solid var(--line);text-decoration:none;font-weight:800}
-footer{padding:34px 0;color:#777;font-size:12px}
-@media(max-width:720px){.grid,.m3{grid-template-columns:1fr}.hero{min-height:76vh}.hero:before{background-size:110%}.m3 img{max-width:520px}}
-</style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#050505">
+  <meta name="description" content="TAKA / ZASU — Music, Apps, ZASU MASTER, Shout Vocal and more.">
+  <meta property="og:title" content="TAKA / ZASU PORTAL">
+  <meta property="og:description" content="Music · Apps · Mastering · Shout · Tokyo">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://zasuofficial.jp/">
+  <title>TAKA / ZASU — OFFICIAL</title>
+  <style>
+    :root{
+      --bg:#050505;--panel:#0b0b0c;--panel2:#111113;--text:#f4f4f2;
+      --muted:#8b8b91;--line:#232326;--red:#ff251d;--red2:#a70d09;
+    }
+    *{box-sizing:border-box}
+    html{background:var(--bg);scroll-behavior:smooth}
+    body{
+      margin:0;min-height:100vh;color:var(--text);
+      font-family:-apple-system,BlinkMacSystemFont,"Helvetica Neue","Hiragino Sans","Yu Gothic",sans-serif;
+      background:
+        radial-gradient(circle at 16% 0%,rgba(255,37,29,.14),transparent 28rem),
+        radial-gradient(circle at 100% 24%,rgba(255,255,255,.045),transparent 24rem),
+        var(--bg);
+      overflow-x:hidden;
+    }
+    body:before{
+      content:"";position:fixed;inset:0;pointer-events:none;z-index:30;opacity:.11;
+      background-image:linear-gradient(rgba(255,255,255,.045) 1px,transparent 1px);
+      background-size:100% 4px;mix-blend-mode:screen
+    }
+    a{color:inherit;text-decoration:none}
+    .wrap{width:min(860px,100%);margin:auto;padding:0 18px 60px}
+    .hero{
+      min-height:58vh;display:flex;align-items:flex-end;position:relative;padding:76px 0 36px;
+      border-bottom:1px solid var(--line);overflow:hidden
+    }
+    .hero:after{
+      content:"";position:absolute;right:-19%;top:2%;width:72%;height:72%;
+      background:url("/images/zasu-logo.svg") center/contain no-repeat;
+      opacity:.055;filter:grayscale(1) brightness(4);transform:rotate(-8deg)
+    }
+    .hero-in{position:relative;z-index:1;width:100%}
+    .topline{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:28px}
+    .eyebrow{font-size:11px;letter-spacing:.28em;font-weight:900;color:var(--red)}
+    .status{display:inline-flex;align-items:center;gap:8px;color:#aaa;font-size:10px;letter-spacing:.14em;font-weight:800}
+    .dot{width:7px;height:7px;border-radius:50%;background:var(--red);box-shadow:0 0 14px rgba(255,37,29,.75)}
+    h1{
+      margin:0;font-size:clamp(64px,17vw,136px);line-height:.76;letter-spacing:-.075em;
+      font-weight:1000;text-transform:uppercase
+    }
+    h1 .slash{color:var(--red);font-weight:400}
+    .tag{
+      display:flex;flex-wrap:wrap;gap:8px 18px;margin:28px 0 14px;
+      font-size:11px;letter-spacing:.18em;font-weight:900;color:#c6c6c9
+    }
+    .desc{max-width:590px;margin:0;color:var(--muted);font-size:14px;line-height:1.85}
+    .ticker{
+      margin:0 -18px;border-bottom:1px solid var(--line);overflow:hidden;white-space:nowrap;
+      background:#090909
+    }
+    .ticker-track{
+      display:inline-block;padding:11px 0;font-size:10px;font-weight:900;letter-spacing:.24em;
+      color:#717177;animation:move 23s linear infinite
+    }
+    .ticker b{color:#dedede}
+    @keyframes move{to{transform:translateX(-50%)}}
+    .section-head{display:flex;justify-content:space-between;align-items:end;margin:38px 0 14px}
+    .section-head h2{margin:0;font-size:12px;letter-spacing:.22em}
+    .section-head span{color:#555;font-size:9px;letter-spacing:.16em}
+    .featured-grid{display:grid;grid-template-columns:1.3fr .7fr;gap:12px}
+    .feature{
+      position:relative;display:flex;min-height:220px;flex-direction:column;justify-content:flex-end;
+      padding:24px;border:1px solid var(--line);background:var(--panel);overflow:hidden;
+      transition:.2s transform,.2s border-color,.2s background
+    }
+    .feature:before{
+      content:"";position:absolute;inset:0;opacity:.7;pointer-events:none;
+      background:linear-gradient(135deg,rgba(255,37,29,.11),transparent 54%)
+    }
+    .feature.master:after{
+      content:"";position:absolute;width:190px;height:190px;border:1px solid rgba(255,37,29,.22);
+      border-radius:50%;right:-58px;top:-58px;box-shadow:0 0 0 24px rgba(255,37,29,.025),0 0 0 50px rgba(255,37,29,.018)
+    }
+    .feature .num{position:absolute;top:18px;right:20px;color:#3b3b3f;font-size:11px;font-weight:900;letter-spacing:.12em}
+    .feature small{position:relative;z-index:1;color:var(--red);font-size:10px;font-weight:900;letter-spacing:.22em}
+    .feature strong{position:relative;z-index:1;display:block;margin-top:8px;font-size:clamp(28px,5vw,48px);line-height:.92;letter-spacing:-.045em}
+    .feature p{position:relative;z-index:1;margin:12px 0 0;color:#9b9ba0;font-size:12px;line-height:1.7;max-width:510px}
+    .feature .go{position:relative;z-index:1;margin-top:20px;font-size:11px;font-weight:900;letter-spacing:.16em}
+    .feature .go span{color:var(--red)}
+    .link-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
+    .link{
+      min-height:96px;display:flex;align-items:center;gap:15px;padding:17px;
+      border:1px solid var(--line);background:rgba(11,11,12,.9);
+      transition:.18s transform,.18s border-color,.18s background
+    }
+    .ico{
+      width:44px;height:44px;display:grid;place-items:center;border:1px solid #2b2b2f;
+      background:#101011;font-size:17px;font-weight:950;flex:none
+    }
+    .txt{min-width:0;flex:1}
+    .name{display:block;font-size:15px;font-weight:900;letter-spacing:-.01em}
+    .meta{display:block;margin-top:5px;color:#67676d;font-size:9px;font-weight:800;letter-spacing:.14em;text-transform:uppercase}
+    .arr{font-size:19px;color:#555}
+    .cta{
+      margin-top:34px;padding:26px 24px;border-top:1px solid var(--line);border-bottom:1px solid var(--line);
+      display:flex;align-items:center;justify-content:space-between;gap:16px
+    }
+    .cta b{font-size:15px;letter-spacing:.05em}.cta small{display:block;color:#666;margin-top:5px;font-size:10px;letter-spacing:.1em}
+    .share{
+      border:1px solid #343438;background:#0b0b0c;color:#efefef;padding:13px 18px;
+      font:inherit;font-size:11px;font-weight:900;letter-spacing:.12em
+    }
+    footer{padding-top:28px;text-align:center;color:#47474d;font-size:9px;letter-spacing:.18em}
+    @media(hover:hover){
+      .feature:hover,.link:hover{transform:translateY(-3px);border-color:#46464a;background:#0f0f11}
+      .master:hover{border-color:rgba(255,37,29,.55)}
+    }
+    @media(max-width:680px){
+      .wrap{padding-left:14px;padding-right:14px}
+      .hero{min-height:50vh;padding-top:58px}
+      .featured-grid,.link-grid{grid-template-columns:1fr}
+      .feature{min-height:190px}
+      .ticker{margin-left:-14px;margin-right:-14px}
+      .cta{align-items:flex-start;flex-direction:column}
+    }
+  </style>
 </head>
 <body>
-<header class="hero">
-  <div class="wrap">
-    <div class="kicker">TOKYO HARDCORE</div>
-    <img class="logo" src="images/zasu-logo.svg" alt="ZASU">
-    <div class="tag">MUSIC / APPS / TOOLS / VOICE</div>
-    <p class="sub">ZASUの音楽、アプリ、ZASU MASTER、M3情報、シャウトレッスンをまとめた公式サイト。</p>
-    <div class="actions">
-      <a class="btn primary" href="#m3">M3秋2026</a>
-      <a class="btn" href="https://zasumaster.com/">ZASU MASTER</a>\n      <a class="btn" href="/portal/">PORTAL</a>
+  <main class="wrap">
+    <header class="hero">
+      <div class="hero-in">
+        <div class="topline">
+          <span class="eyebrow">TOKYO / JAPAN</span>
+          <span class="status"><i class="dot"></i> INDEPENDENT CREATOR</span>
+        </div>
+        <h1>TAKA<span class="slash">/</span><br>ZASU</h1>
+        <div class="tag"><span>MUSIC</span><span>APPS</span><span>MASTERING</span><span>SHOUT</span></div>
+        <p class="desc">音楽を作る。アプリを作る。声を鳴らす。ZASUの活動をひとつにまとめたオフィシャル・ポータル。</p>
+      </div>
+    </header>
+
+    <div class="ticker">
+      <div class="ticker-track">
+        <b>ZASU MASTER</b> — OPEN BETA / FREE　·　MUSIC LIVES IN CHAOS　·　<b>TOKYO HARDCORE</b>　·　APPS / MUSIC / VOICE　·　
+        <b>ZASU MASTER</b> — OPEN BETA / FREE　·　MUSIC LIVES IN CHAOS　·　<b>TOKYO HARDCORE</b>　·　APPS / MUSIC / VOICE　·　
+      </div>
     </div>
-  </div>
-</header>
 
-<section id="m3"><div class="wrap">
-  <div class="m3">
-    <img src="images/zasu-jacket.svg" alt="ZASU 1st EP">
-    <div>
-      <div class="kicker">M3 AUTUMN 2026</div>
-      <h2>1st EP<br><span class="red">ザス爆発</span></h2>
-      <div class="price">¥500</div>
-      <p class="lead">M3秋2026 会場頒布。TOKYO HARDCOREを詰め込んだZASU 1st EP。</p>
-    </div>
-  </div>
-</div></section>
+    <div class="section-head"><h2>FEATURED</h2><span>WHAT'S ACTIVE NOW</span></div>
+    <section class="featured-grid">
+      <a class="feature master" href="https://zasumaster.com/" target="_blank" rel="noopener">
+        <span class="num">01</span>
+        <small>AUTOMATIC MASTERING</small>
+        <strong>ZASU<br>MASTER.</strong>
+        <p>WAV / FLACをアップロード。自動マスタリング、FAIR A/B比較、24bit WAVダウンロード。OPEN BETA / FREE。</p>
+        <span class="go">OPEN SERVICE <span>↗</span></span>
+      </a>
 
-<section><div class="wrap">
-  <div class="kicker">ZASU PROJECTS</div>
-  <h2>PROJECTS</h2>
-  <p class="lead">音楽だけでなく、制作ツールやiOSアプリまでZASU名義で展開しています。</p>
-  <div class="grid">
-    <a class="card" href="https://zasumaster.com/"><div class="eyebrow">MASTERING</div><h3>ZASU MASTER</h3><p>オンライン・マスタリングサービス。</p></a>
-    <a class="card" href="https://apps.apple.com/jp/developer/takashi-nose/id1869272305"><div class="eyebrow">APP STORE</div><h3>ZASU APPS</h3><p>音楽・動画・再生体験を中心にしたiOSアプリ。</p></a>
-    <a class="card" href="https://takataka12.github.io/shout-lesson/"><div class="eyebrow">VOCAL</div><h3>SHOUT LESSON</h3><p>ラウド／ハードコア系のシャウトレッスン。</p></a>
-    <a class="card" href="https://www.youtube.com/@ZASU_JP"><div class="eyebrow">MUSIC / VIDEO</div><h3>YOUTUBE</h3><p>ZASUの楽曲・映像・関連コンテンツ。</p></a>
-  </div>
-</div></section>
+      <a class="feature" href="https://apps.apple.com/jp/app/zasu-all-time-best/id6814104024" target="_blank" rel="noopener">
+        <span class="num">02</span>
+        <small>IOS / MUSIC</small>
+        <strong>ALL TIME<br>BEST.</strong>
+        <p>ZASUの楽曲をまとめて試聴できるiPhoneアプリ。</p>
+        <span class="go">APP STORE <span>↗</span></span>
+      </a>
+    </section>
 
-<section><div class="wrap">
-  <div class="kicker">FOLLOW ZASU</div>
-  <h2>LINKS</h2>
-  <div class="links">
-    <a href="https://x.com/zasu_jp?s=11">X / @zasu_jp</a>
-    <a href="https://www.youtube.com/@ZASU_JP">YouTube</a>
-    <a href="https://www.instagram.com/taka89_12/">Instagram</a>
-    <a href="https://apps.apple.com/jp/developer/takashi-nose/id1869272305">App Store</a>\n    <a href="/portal/">Portal</a>
-  </div>
-</div></section>
+    <div class="section-head"><h2>LINKS</h2><span>ALL IN ONE</span></div>
+    <section class="link-grid">
+      <a class="link" href="https://x.com/zasu_jp?s=11" target="_blank" rel="noopener">
+        <span class="ico">𝕏</span><span class="txt"><span class="name">X / Twitter</span><span class="meta">@zasu_jp</span></span><span class="arr">↗</span>
+      </a>
+      <a class="link" href="https://www.youtube.com/@ZASU_JP" target="_blank" rel="noopener">
+        <span class="ico">▶</span><span class="txt"><span class="name">YouTube</span><span class="meta">@ZASU_JP</span></span><span class="arr">↗</span>
+      </a>
+      <a class="link" href="https://www.instagram.com/taka89_12" target="_blank" rel="noopener">
+        <span class="ico">◎</span><span class="txt"><span class="name">Instagram</span><span class="meta">@taka89_12</span></span><span class="arr">↗</span>
+      </a>
+      <a class="link" href="https://apps.apple.com/jp/developer/takashi-nose/id1869272305" target="_blank" rel="noopener">
+        <span class="ico">A</span><span class="txt"><span class="name">App Store</span><span class="meta">TAKASHI NOSE / IOS APPS</span></span><span class="arr">↗</span>
+      </a>
+      <a class="link" href="https://zasumaster.com/" target="_blank" rel="noopener">
+        <span class="ico">M</span><span class="txt"><span class="name">ZASU MASTER</span><span class="meta">MASTERING / OPEN BETA</span></span><span class="arr">↗</span>
+      </a>
+      <a class="link" href="https://takataka12.github.io/shout-lesson/" target="_blank" rel="noopener">
+        <span class="ico">⚡</span><span class="txt"><span class="name">Shout Lesson</span><span class="meta">SCREAM / SHOUT VOCAL</span></span><span class="arr">↗</span>
+      </a>
+      <a class="link" href="https://takataka12.github.io/#m3" target="_blank" rel="noopener">
+        <span class="ico">✦</span><span class="txt"><span class="name">M3 秋 2026</span><span class="meta">EVENT / ZASU</span></span><span class="arr">↗</span>
+      </a>
+      <a class="link" href="https://github.com/takataka12" target="_blank" rel="noopener">
+        <span class="ico">⌘</span><span class="txt"><span class="name">GitHub</span><span class="meta">DEV / PROJECTS</span></span><span class="arr">↗</span>
+      </a>
+    </section>
 
-<footer><div class="wrap">© 2026 ZASU — TOKYO HARDCORE</div></footer>
+    <section class="cta">
+      <div><b>TAKA / ZASU PORTAL</b><small>MUSIC · APPS · MASTERING · SHOUT · TOKYO</small></div>
+      <button class="share" id="share">SHARE THIS PAGE</button>
+    </section>
+
+    <footer>© <span id="year"></span> TAKA / ZASU — TOKYO, JAPAN</footer>
+  </main>
+
+  <script>
+    document.getElementById('year').textContent=new Date().getFullYear();
+    document.getElementById('share').addEventListener('click',async()=>{
+      const btn=document.getElementById('share');
+      const data={title:'TAKA / ZASU OFFICIAL',text:'TAKA / ZASU — Music, Apps, Mastering, Shout, Tokyo',url:location.href};
+      try{
+        if(navigator.share){await navigator.share(data)}
+        else{await navigator.clipboard.writeText(location.href);btn.textContent='COPIED'}
+      }catch(e){}
+    });
+  </script>
 </body>
 </html>
