@@ -179,6 +179,17 @@
     .ab div+div{border-left:1px solid var(--line)}
     .ab strong{font-size:34px}.ab span{font-size:8px;letter-spacing:.17em;color:#737379}
     .ab .after strong{color:var(--yellow)}
+    .demo-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:10px}
+    .demo-card{padding:26px;border:1px solid var(--line);background:#0a0a0b;position:relative;overflow:hidden}
+    .demo-card.main{border-color:rgba(255,217,26,.38);background:linear-gradient(145deg,rgba(255,217,26,.055),#09090a 42%)}
+    .demo-card .demo-kicker{font-size:9px;color:var(--yellow);font-weight:1000;letter-spacing:.18em}
+    .demo-card h3{margin:11px 0 0;font-size:25px;letter-spacing:-.035em}
+    .demo-card p{margin:10px 0 18px;color:#7d7d83;font-size:11px;line-height:1.75}
+    .demo-card audio{display:block;width:100%;height:44px}
+    .demo-flow{display:flex;gap:7px;flex-wrap:wrap;margin-top:16px}
+    .demo-flow span{padding:7px 9px;border:1px solid #303034;font-size:8px;font-weight:1000;letter-spacing:.1em;color:#a2a2a7}
+    .demo-flow .after{border-color:rgba(255,217,26,.42);color:var(--yellow)}
+    .demo-note{margin-top:12px;color:#55555b;font-size:9px;line-height:1.65}
     .system{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
     .sys{padding:23px;border:1px solid var(--line);background:#0a0a0b}
     .sys small{color:#6e6e74;font-size:9px;letter-spacing:.15em;font-weight:900}
@@ -222,6 +233,7 @@
       .chain{grid-template-columns:1fr}.chain div{border-right:0;border-bottom:1px solid var(--line)}
       .chain div:last-child{border-bottom:0}.preset-grid{grid-template-columns:repeat(3,1fr)}
       .match{grid-template-columns:1fr}.ab{min-height:180px;border-left:0;border-top:1px solid var(--line)}
+      .demo-grid{grid-template-columns:1fr}
     }
     @media(max-width:600px){
       .wrap{padding:0 14px 70px}.nav{height:60px}.navlinks a:not(.navbuy){display:none}
@@ -243,6 +255,7 @@
       <div class="navlinks">
         <a href="#features">FEATURES</a>
         <a href="#workflow">ENGINE</a>
+        <a href="#demo">A/B DEMO</a>
         <a href="#system">SYSTEM</a>
         <a class="navbuy" href="#buy">BUY / ¥2,980</a>
       </div>
@@ -368,9 +381,42 @@
       </div>
     </section>
 
+
+    <section class="block" id="demo" hidden>
+      <div class="section-top">
+        <div class="n">04 / HEAR IT</div>
+        <div>
+          <h2>同じ場所を、<br>何度も切り替えて聴く。</h2>
+          <p>MASTERプリセットの実演です。まずRAW A/Bで音圧・密度・前への出方を、そのあとLEVEL MATCHEDで音量差を減らした質感の変化を確認できます。</p>
+        </div>
+      </div>
+      <div class="demo-grid">
+        <article class="demo-card main">
+          <div class="demo-kicker">MAIN DEMO / RAW A/B</div>
+          <h3>BEFORE ↔ MASTER</h3>
+          <p>同一フレーズをBEFORE → AFTER → BEFORE → AFTERで比較。ZASU LOUDを通した時の変化をそのまま聴けます。</p>
+          <audio controls preload="none" id="demoRaw">
+            <source src="https://siwmzradvrtetotakkbi.supabase.co/storage/v1/object/public/zasu-loud-media/ZASU_LOUD_CLEAR_RAW_AB.m4a" type="audio/mp4">
+          </audio>
+          <div class="demo-flow"><span>BEFORE</span><span class="after">MASTER</span><span>BEFORE</span><span class="after">MASTER</span></div>
+          <div class="demo-note">MASTER preset / same source section / raw output level</div>
+        </article>
+        <article class="demo-card">
+          <div class="demo-kicker">FAIR CHECK / LEVEL MATCHED</div>
+          <h3>音量を揃えて確認。</h3>
+          <p>MASTER後を約5.18 dB下げて、BEFOREと平均レベルを合わせた比較です。単なる音量差ではなく、密度や質感をチェックできます。</p>
+          <audio controls preload="none" id="demoMatched">
+            <source src="https://siwmzradvrtetotakkbi.supabase.co/storage/v1/object/public/zasu-loud-media/ZASU_LOUD_CLEAR_LEVEL_MATCHED_AB.m4a" type="audio/mp4">
+          </audio>
+          <div class="demo-flow"><span>BEFORE</span><span class="after">MATCHED</span><span>BEFORE</span><span class="after">MATCHED</span></div>
+          <div class="demo-note">Level matched by integrated RMS / approximately -5.18 dB on AFTER</div>
+        </article>
+      </div>
+    </section>
+
     <section class="block" id="system">
       <div class="section-top">
-        <div class="n">04 / SYSTEM</div>
+        <div class="n">05 / SYSTEM</div>
         <div>
           <h2>macOSで、すぐ使える。</h2>
           <p>正式版InstallerはDeveloper ID署名・Apple Notarization・Staple・Gatekeeper検証まで完了した配布用パッケージです。</p>
@@ -400,7 +446,7 @@
 
     <section class="block">
       <div class="section-top">
-        <div class="n">05 / FAQ</div>
+        <div class="n">06 / FAQ</div>
         <div><h2>よくある質問。</h2></div>
       </div>
       <div class="faq">
@@ -416,6 +462,16 @@
       <span>ZASU LOUD v1.1.2 / LOUDER. NOT WORSE.</span>
     </footer>
   </main>
-  <script>document.getElementById('year').textContent=new Date().getFullYear();</script>
+  <script>
+    document.getElementById('year').textContent=new Date().getFullYear();
+    (async()=>{
+      const base='https://siwmzradvrtetotakkbi.supabase.co/storage/v1/object/public/zasu-loud-media/';
+      const files=['ZASU_LOUD_CLEAR_RAW_AB.m4a','ZASU_LOUD_CLEAR_LEVEL_MATCHED_AB.m4a'];
+      try{
+        const checks=await Promise.all(files.map(name=>fetch(base+name,{method:'HEAD',cache:'no-store'})));
+        if(checks.every(r=>r.ok)) document.getElementById('demo').hidden=false;
+      }catch(e){}
+    })();
+  </script>
 </body>
 </html>
